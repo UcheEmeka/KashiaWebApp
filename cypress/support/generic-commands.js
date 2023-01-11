@@ -29,3 +29,8 @@ Cypress.Commands.add("clickOnMenu",(menu)=>
 {
   genericFunctions.clickOnSideMenu(menu)
 })
+
+Cypress.Commands.add("assertToast",(str)=>
+{
+  genericFunctions.assertToastMessage(str)
+})

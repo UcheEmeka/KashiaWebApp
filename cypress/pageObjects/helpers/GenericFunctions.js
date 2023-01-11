@@ -1,7 +1,10 @@
 class GenericFunctions {
   //Assert the URL using
   assertURL(endpoint) {
-    cy.url().should("contain", endpoint);
+    cy.location({timeout: 10000}).should((loc)=>
+    {
+      expect(loc.pathname).to.eq(endpoint)
+    })
   }
 
   //Click on a button with name
@@ -27,6 +30,11 @@ class GenericFunctions {
         cy.wrap($el).click();
       }
     });
+  }
+
+  assertToastMessage(str)
+  {
+    cy.get(".toast-body>span").should('include.text',str)
   }
 }
 export default GenericFunctions;
