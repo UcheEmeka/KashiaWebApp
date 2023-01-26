@@ -8,6 +8,10 @@ Cypress.Commands.add("clickSelectedButton", (buttonName) => {
   genericFunctions.clickButton(buttonName);
 });
 
+Cypress.Commands.add("forcefullyClickButton", (buttonName) => {
+  genericFunctions.forceClickButton(buttonName);
+});
+
 Cypress.Commands.add("verifyURL", (endPoint) => {
   genericFunctions.assertURL(endPoint);
 });
@@ -33,4 +37,9 @@ Cypress.Commands.add("clickOnMenu",(menu)=>
 Cypress.Commands.add("assertToast",(str)=>
 {
   genericFunctions.assertToastMessage(str)
+})
+
+Cypress.Commands.add("clickCloseModal",()=>
+{
+  genericFunctions.closeModal();
 })

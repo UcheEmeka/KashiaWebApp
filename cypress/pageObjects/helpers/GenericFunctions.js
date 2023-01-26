@@ -1,15 +1,18 @@
 class GenericFunctions {
   //Assert the URL using
   assertURL(endpoint) {
-    cy.location({timeout: 10000}).should((loc)=>
-    {
-      expect(loc.pathname).to.eq(endpoint)
-    })
+    cy.location({ timeout: 10000 }).should((loc) => {
+      expect(loc.pathname).to.eq(endpoint);
+    });
   }
 
   //Click on a button with name
   clickButton(buttonName) {
     cy.contains("button", buttonName).click();
+  }
+
+  forceClickButton(buttonName) {
+    cy.contains("button", buttonName).click({force:true});
   }
 
   displayMenuOnNavbar() {
@@ -32,9 +35,12 @@ class GenericFunctions {
     });
   }
 
-  assertToastMessage(str)
-  {
-    cy.get(".toast-body>span").should('include.text',str)
+  assertToastMessage(str) {
+    cy.get(".toast-body>span").should("include.text", str);
+  }
+
+  closeModal() {
+    cy.get(".close-btn").click();
   }
 }
 export default GenericFunctions;
