@@ -22,7 +22,7 @@ describe("Products & Services Test Suite",{testIsolation: false},() => {
   it("Add a product/Service",()=>
   {
     cy.forcefullyClickButton("Add Product");
-    productPage.enterProductData(0,"P11695")
+    productPage.enterProductData(0,"P11695000")
     productPage.selectMeasurementType("Unit")
     productPage.enterProductData(1,"1000")
     productPage.uncheckChargeVAT()
